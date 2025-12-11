@@ -22,7 +22,7 @@
     }:
     {
       make-shells.default = {
-        name = "jupyter-api.nvim";
+        name = "your-project-name-here";
         packages = [
           pkgs.nixfmt
           pkgs.deadnix
