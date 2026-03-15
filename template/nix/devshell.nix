@@ -14,21 +14,7 @@
     inputs.make-shell.flakeModules.default
   ];
 
-  perSystem =
-    {
-      pkgs,
-      inputs',
-      ...
-    }:
-    {
-      make-shells.default = {
-        name = "your-project-name-here";
-        packages = [
-          pkgs.nixfmt
-          pkgs.deadnix
-          pkgs.statix
-          inputs'.flint.packages.default
-        ];
-      };
-    };
+  perSystem = {
+    make-shells.default.name = "your-project-name-here";
+  };
 }

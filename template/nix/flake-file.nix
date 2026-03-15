@@ -19,10 +19,6 @@
         inputs.nixpkgs-lib.follows = "nixpkgs";
       };
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-      flint = {
-        url = "github:NotAShelf/flint";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
     };
   };
 
