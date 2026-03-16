@@ -7,8 +7,8 @@ A flake template that uses:
 - [[https://github.com/numtide/treefmt-nix][treefmt-nix]] for formatting with src_bash{nix fmt}.
 - [[https://github.com/nicknovitski/make-shell][make-shell]] to merge devshell definitions from multiple files with the NixOS module system.
 - [[https://github.com/notashelf/flint][flint]] to check your flake inputs for duplicates.
-- [[https://github.com/NixOS/nixfmt][nixfmt]], [[https://github.com/astro/deadnix][deadnix]], and [[https://github.com/oppiliappan/statix][statix]]
-  for linting and formatting your Nix code.
+- [[https://github.com/NixOS/nixfmt][nixfmt]], [[https://github.com/astro/deadnix][deadnix]], and [[https://github.com/oppiliappan/statix][statix]] for linting and formatting your Nix code.
+- [[https://github.com/crate-ci/typos][typos]] for spell checking code.
 ** Usage
 #+BEGIN_SRC bash
 nix flake init -t github:bitbloxhub/flake-template
