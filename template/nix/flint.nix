@@ -10,10 +10,8 @@
       ...
     }:
     {
-      make-shells.default = {
-        packages = [
-          inputs'.flint.packages.default
-        ];
-      };
+      make-shells.default.packages = [
+        inputs'.flint.packages.default
+      ];
     };
 }

@@ -4,6 +4,13 @@
 }:
 {
   flake-file = {
+    inputs = {
+      flake-file.url = "github:vic/flake-file";
+      flake-parts = {
+        url = "github:hercules-ci/flake-parts";
+        inputs.nixpkgs-lib.follows = "nixpkgs";
+      };
+    };
     outputs =
       # nix
       ''
@@ -12,24 +19,17 @@
           (inputs.import-tree.filterNot (inputs.nixpkgs.lib.hasSuffix "npins/default.nix")) ./nix
         )
       '';
-    inputs = {
-      flake-file.url = "github:vic/flake-file";
-      flake-parts = {
-        url = "github:hercules-ci/flake-parts";
-        inputs.nixpkgs-lib.follows = "nixpkgs";
-      };
-    };
   };
+
+  imports = [
+    inputs.flake-file.flakeModules.default
+    inputs.flake-file.flakeModules.import-tree
+  ];
 
   systems = [
     "x86_64-linux"
     "aarch64-linux"
     "x86_64-darwin"
     "aarch64-darwin"
-  ];
-
-  imports = [
-    inputs.flake-file.flakeModules.default
-    inputs.flake-file.flakeModules.import-tree
   ];
 }

@@ -23,6 +23,14 @@
       inputs.flake-compat.follows = "";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    pedantix = {
+      url = "github:Swarsel/pedantix";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
