@@ -12,5 +12,10 @@
     inputs.treefmt-nix.flakeModule
   ];
 
-  perSystem.treefmt.projectRootFile = "flake.lock";
+  perSystem.treefmt = {
+    projectRootFile = "flake.lock";
+    settings.excludes = [
+      "template/flake.nix"
+    ];
+  };
 }
