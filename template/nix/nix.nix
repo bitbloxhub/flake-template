@@ -3,12 +3,22 @@
   ...
 }:
 {
-  flake-file.inputs.pedantix = {
-    url = "github:Swarsel/pedantix";
-    inputs = {
-      flake-parts.follows = "flake-parts";
-      nixpkgs.follows = "nixpkgs";
-      treefmt-nix.follows = "treefmt-nix";
+  flake-file.inputs = {
+    git-hooks-nix = {
+      url = "github:cachix/git-hooks.nix";
+      inputs = {
+        flake-compat.follows = "";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    pedantix = {
+      url = "github:Swarsel/pedantix";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        git-hooks-nix.follows = "git-hooks-nix";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
     };
   };
 

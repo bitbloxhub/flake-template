@@ -13,9 +13,16 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
-    flint = {
-      url = "github:NotAShelf/flint";
+    flat-flake = {
+      url = "github:linyinfeng/flat-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    git-hooks-nix = {
+      url = "github:cachix/git-hooks.nix";
+      inputs = {
+        flake-compat.follows = "";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     import-tree.url = "github:denful/import-tree";
     make-shell = {
@@ -27,6 +34,7 @@
       url = "github:Swarsel/pedantix";
       inputs = {
         flake-parts.follows = "flake-parts";
+        git-hooks-nix.follows = "git-hooks-nix";
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
       };
